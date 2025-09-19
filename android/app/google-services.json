@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "263277157082",
+    "project_id": "bovineclassifer",
+    "storage_bucket": "bovineclassifer.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263277157082:android:5273c842ab9ec83b1de3e3",
+        "android_client_info": {
+          "package_name": "com.example.bovine_classifier_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqG4mmBG4ayZfqwpTTaoRaJpflB-ksY2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
