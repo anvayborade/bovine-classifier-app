@@ -57,7 +57,7 @@ class OsmPoiService {
     // ignore: avoid_print
     print('GET $uri');
 
-    final res = await http.get(uri).timeout(const Duration(seconds: 12));
+    final res = await http.get(uri).timeout(const Duration(seconds: 40));
     if (res.statusCode != 200) {
       throw Exception('Places error: ${res.statusCode} ${res.body}');
     }

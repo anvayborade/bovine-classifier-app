@@ -17,10 +17,15 @@ class TtsService {
     _inited = true;
   }
 
-  Future<void> speakHindi(String text) async {
-    if (text.trim().isEmpty) return;
-    await _ensureInit();
-    await _tts.stop();
+  Future<void> setRate(double rate) async {
+    // flutter_tts expects 0.0–1.0 (platform normalizes)
+    final clamped = rate.clamp(0.1, 1.0);
+    await _tts.setSpeechRate(clamped);
+  }
+
+  Future<void> speakHindi(String text, {double? rate}) async {
+    if (rate != null) await setRate(rate);
+    await _tts.setLanguage('hi-IN');
     await _tts.speak(text);
   }
 

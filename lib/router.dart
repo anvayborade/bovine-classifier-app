@@ -70,7 +70,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const DairyMarketplaceScreen());
 
       default:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(builder: (_) => const DashboardScreen());
     }
   }
 }

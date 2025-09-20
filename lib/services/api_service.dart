@@ -90,8 +90,8 @@ class ApiService {
       contentType: MediaType(parts.first, parts.last),
     ));
 
-    final streamed = await req.send().timeout(const Duration(seconds: 30));
-    final resp = await http.Response.fromStream(streamed).timeout(const Duration(seconds: 30));
+    final streamed = await req.send().timeout(const Duration(seconds: 60));
+    final resp = await http.Response.fromStream(streamed).timeout(const Duration(seconds: 60));
     if (resp.statusCode != 200) {
       throw Exception('Server ${resp.statusCode}: ${resp.body}');
     }
@@ -131,7 +131,7 @@ class ApiService {
         if (location != null) 'location': location,
       }),
     )
-        .timeout(const Duration(seconds: 25));
+        .timeout(const Duration(seconds: 50));
 
     if (r.statusCode != 200) {
       throw Exception('Server ${r.statusCode}: ${r.body}');
@@ -175,7 +175,7 @@ class ApiService {
       base,
       '/places?q=${Uri.encodeComponent(query)}&lat=$lat&lon=$lon&limit=$limit&radius_km=$radiusKm&country=$country',
     );
-    final r = await http.get(uri).timeout(const Duration(seconds: 20));
+    final r = await http.get(uri).timeout(const Duration(seconds: 40));
     if (r.statusCode != 200) {
       throw Exception('Places error: ${r.statusCode} ${r.body}');
     }
